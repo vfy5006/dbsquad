@@ -28,3 +28,17 @@ INSERT INTO DATASTORE VALUES (20001, 'ODB', 'Operational Database', 999.95 );
 INSERT INTO DATASTORE VALUES (20002, 'NoSQL', 'Non Relational Database ', 3999.95 );
 INSERT INTO DATASTORE VALUES (20003, 'RDMS', 'Relational Database ', 1999.95 );
 
+INSERT INTO HARDWARE VALUES (10001, 500.00, 'Small ODB', 'Hardware for a small ODB system.  50 users max');
+INSERT INTO HARDWARE VALUES (10002, 2500.00, 'Large ODB', 'Hardware for a large ODB system.  500 users max');
+INSERT INTO HARDWARE VALUES (10003, 1000.00, 'Small NoSQL', 'Hardware for a small NoSQL system.  75 users max');
+INSERT INTO HARDWARE VALUES (10004, 10000.00, 'Large NoSQL', 'Hardware for a large NoSQL system.  1000 users max');
+INSERT INTO HARDWARE VALUES (10005, 2500.00, 'Small RDMS', 'Hardware for a small RDMS system.  25 users max');
+INSERT INTO HARDWARE VALUES (10006, 15000.00, 'Large RDMS', 'Hardware for a large RDMS system.  650 users max');
+
+INSERT INTO COMPONENT VALUES (00001, 'Display', 50.00, 'Test model', 'MKO8UH');
+INSERT INTO COMPONENT VALUES (00002, 'HIM', 75.00, 'Test model', '8UH8UF43E');
+INSERT INTO COMPONENT VALUES (00003, 'Server Rack', 250.00, 'Test model', 'DFSDF4HH');
+INSERT INTO COMPONENT VALUES (00004, 'Power Supply', 45.00, 'Test model', '645980OUH');
+INSERT INTO COMPONENT VALUES (00005, 'Server Blade', 15.00, 'Test model', 'GTHY678');
+INSERT INTO COMPONENT VALUES (00006, 'AC Unit', 456.00, 'Test model', 'JHG456');
+INSERT INTO COMPONENT VALUES (00007, 'Network Switch', 687.00, 'Test model', 'HYJTJ345');
