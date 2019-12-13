@@ -60,7 +60,7 @@ CREATE TABLE OFFICE
 (
     ID                  SMALLINT    NOT NULL,
     PHONE               BIGINT,
-    FAX                 INT,
+    FAX                 BIGINT,
     ADDRESS             VARCHAR(100),
     HOURS_START         TIME,
     HOURS_END           TIME,
