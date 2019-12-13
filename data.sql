@@ -42,3 +42,18 @@ INSERT INTO COMPONENT VALUES (00004, 'Power Supply', 45.00, 'Test model', '64598
 INSERT INTO COMPONENT VALUES (00005, 'Server Blade', 15.00, 'Test model', 'GTHY678');
 INSERT INTO COMPONENT VALUES (00006, 'AC Unit', 456.00, 'Test model', 'JHG456');
 INSERT INTO COMPONENT VALUES (00007, 'Network Switch', 687.00, 'Test model', 'HYJTJ345');
+
+INSERT INTO CUSTOMER VALUES (30001, 'Miami Beach BBQ', 'Big Ole Bill', '123 Smokey Ave, Maimi, FL 33101', 6521457896 );
+INSERT INTO CUSTOMER VALUES (30002, 'Golf Maxx', 'Chet Springs', '9745 NW 33rd Ave, Maimi, FL 33101', 6521257896 );
+INSERT INTO CUSTOMER VALUES (30003, 'Dolphin Wranglers', 'Leah Lemieux', '6985 Seaside Ave, Maimi, FL 33101', 6587415689 );
+INSERT INTO CUSTOMER VALUES (30004, 'Everglades Tours', 'Crocodile Jack', '5847 Swamp Cir, Florida City, FL 33101',6589741235 );
+INSERT INTO CUSTOMER VALUES (30005, 'Ski Adventures Inc', 'Dexter Rutecki', '2569 Troublesome Gulch Rd, Aspen, CO 81611', 6987412356);
+INSERT INTO CUSTOMER VALUES (30006, 'River Raft Tours', 'Casey Tango', '4587 Big Canyon Rd, Steamboat, CO 80477',3698521478 );
+INSERT INTO CUSTOMER VALUES (30007, 'Fractal Inc', 'Jon Dirth', '123 1st St, Denver, CO 80401', 3036985214);
+
+INSERT INTO SERVICE VALUES (04001, 'SMLODB', 'Small', 5000.00, 'Small ODB system.  50 users max', 10001, 20001);
+INSERT INTO SERVICE VALUES (04002, 'MEDODB', 'Medium', 25000.00, 'Medium ODB system.  500 users max', 10002, 20001);
+INSERT INTO SERVICE VALUES (04003, 'SMLNoSQL', 'Small', 18500.00, 'Small NoSQL system.  75 users max', 10003, 20002);
+INSERT INTO SERVICE VALUES (04004, 'ENTNoSQL', 'Enterprise', 35000.00, 'Enterprise NoSQL system.  1000 users max', 10004, 20002);
+INSERT INTO SERVICE VALUES (04005, 'MEDRDMS', 'Medium', 65000.00, 'Medium RDMS system.  25 users max', 10005, 20003);
+INSERT INTO SERVICE VALUES (04006, 'ENTRDMS', 'Enterprise', 250000.00, 'Enterprise RDMS system.  650 users max', 10006, 20003);
