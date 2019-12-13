@@ -45,8 +45,9 @@ CREATE TABLE EMPLOYEE
     ID                  SMALLINT        NOT NULL,
     SSN                 INT             NOT NULL UNIQUE,
     TITLE               VARCHAR(50),
+    NAME                VARCHAR(50),
     HIRE_DATE           DATE,
-    PHONE               INT,
+    PHONE               BIGINT,
     ADDRESS             VARCHAR(100),
     PAY_RATE            DECIMAL(10,2) DEFAULT 0,
     PAY_CLASS           CHAR(2),
@@ -58,7 +59,7 @@ CREATE TABLE EMPLOYEE
 CREATE TABLE OFFICE
 (
     ID                  SMALLINT    NOT NULL,
-    PHONE               INT,
+    PHONE               BIGINT,
     FAX                 INT,
     ADDRESS             VARCHAR(100),
     HOURS_START         TIME,
@@ -75,7 +76,7 @@ CREATE TABLE CUSTOMER
     BUSINESS_NAME   VARCHAR(100),
     CONTACT_NAME    VARCHAR(100),
     ADDRESS         VARCHAR(100),
-    PHONE           INT,
+    PHONE           BIGINT,
     PRIMARY KEY(ID)
 );
 
