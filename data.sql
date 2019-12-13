@@ -50,6 +50,7 @@ INSERT INTO CUSTOMER VALUES (30004, 'Everglades Tours', 'Crocodile Jack', '5847 
 INSERT INTO CUSTOMER VALUES (30005, 'Ski Adventures Inc', 'Dexter Rutecki', '2569 Troublesome Gulch Rd, Aspen, CO 81611', 6987412356);
 INSERT INTO CUSTOMER VALUES (30006, 'River Raft Tours', 'Casey Tango', '4587 Big Canyon Rd, Steamboat, CO 80477',3698521478 );
 INSERT INTO CUSTOMER VALUES (30007, 'Fractal Inc', 'Jon Dirth', '123 1st St, Denver, CO 80401', 3036985214);
+INSERT INTO CUSTOMER VALUES (30008, 'Hotel Coral Essex', 'Lamar Lewis' , '589 4th Ave, Maimi, FL 33101', 3698526578 );
 
 INSERT INTO SERVICE VALUES (04001, 'SMLODB', 'Small', 5000.00, 'Small ODB system.  50 users max', 10001, 20001);
 INSERT INTO SERVICE VALUES (04002, 'MEDODB', 'Medium', 25000.00, 'Medium ODB system.  500 users max', 10002, 20001);
