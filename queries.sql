@@ -7,7 +7,7 @@ WHERE EMPLOYEE.ID = ASSINGED_TO.EMPLOYEE AND
  PROJECT.CUSTOMER = CUSTOMER.ID  AND
 CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex';
 
-Paychecks need to be cut for salaried employees for the month.  List Names, ID's, and check amounts for salaried employees.   
+//Paychecks need to be cut for salaried employees for the month.  List Names, ID's, and check amounts for salaried employees.   
 
 SELECT ID, name,  (pay_rate / 12)
 FROM Employee
