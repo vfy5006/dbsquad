@@ -31,4 +31,8 @@ made_of.hardware = hardware.id and
 service.hardware = hardware.id and 
 service.CODE = 'ENTRDMS'
 
+/*A snow storm is about to Hit Denver, we need to call all of our Denver employees.  Whar are thier names and phone numbers?*/
 
+Select Employee.name, Employee.phone
+From employee
+Where employee.address like '%Denver%'
