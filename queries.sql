@@ -14,3 +14,10 @@ FROM Employee
 Where pay_class = 'YR'
 Order by 3
 
+//What is the name of our latest hire?
+
+Select employee."NAME"
+From employee
+where Employee.HIRE_DATE =
+(SELECT  MAX(EMPLOYEE.HIRE_DATE)
+FROM EMPLOYEE)
