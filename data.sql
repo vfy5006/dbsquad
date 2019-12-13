@@ -1,4 +1,4 @@
-//TEST VALUES
+/*TEST VALUES
 
 INSERT INTO HARDWARE VALUES (00000, 0.00, 'Test', 'Test Hardware do not use');
 
@@ -22,7 +22,7 @@ INSERT INTO ASSINGED_TO VALUES (00000,00000,00000);
 
 INSERT INTO MADE_OF VALUES (00000, 00000, 00000);
 
-//Real Values below
+Real Values below*/
 
 INSERT INTO DATASTORE VALUES (20001, 'ODB', 'Operational Database', 999.95 );
 INSERT INTO DATASTORE VALUES (20002, 'NoSQL', 'Non Relational Database ', 3999.95 );
