@@ -51,14 +51,26 @@ FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
 
 /* How much has employee D Isiah T. Billings-Clyde earn for project 00308? */
 
+SELECT EMPLOYEE.PAY_RATE * 
+(SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT = 00308 AND TIMESHEET.EMPLOYEE = (SELECT EMPLOYEE.ID FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde')) 
+FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
 
 
-/* How much has employee D Isiah T. Billings-Clyde earned worked for Hotel Coral Essex? */
+/* How much has employee D Isiah T. Billings-Clyde earned working for Hotel Coral Essex? */
 
+SELECT EMPLOYEE.PAY_RATE * 
+(SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
+(SELECT PROJECT.ID FROM PROJECT WHERE PROJECT.CUSTOMER = (SELECT CUSTOMER.ID FROM CUSTOMER WHERE CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex'))
+AND TIMESHEET.EMPLOYEE = (SELECT EMPLOYEE.ID FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde')) 
+FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
+
+/* How many hours were worked for all the projects with the business name Hotel Coral Essex? */
+
+SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
+(SELECT PROJECT.ID FROM PROJECT WHERE PROJECT.CUSTOMER = (SELECT CUSTOMER.ID FROM CUSTOMER WHERE CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex'));
 
 
 /* How much money has been paid out to employees who have worked for the customer Hotel Coral Essex? */
 
-
-
-/* How many employees, whose manager's make more than $125000, have worked for Fractal Inc.? */
+SELECT SUM(HOURS_WORKED * (SELECT EMP.PAY_RATE FROM EMPLOYEE AS EMP WHERE EMP.ID = EMPLOYEE)) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
+(SELECT PROJECT.ID FROM PROJECT WHERE PROJECT.CUSTOMER = (SELECT CUSTOMER.ID FROM CUSTOMER WHERE CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex'));
