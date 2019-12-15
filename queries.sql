@@ -1,4 +1,4 @@
-/* Who is working on projects for the customer Hotel Coral Exxex? */
+/* 1. Who is working on projects for the customer Hotel Coral Exxex? */
 
 SELECT EMPLOYEE.NAME, EMPLOYEE.TITLE
 FROM EMPLOYEE, PROJECT, CUSTOMER, ASSINGED_TO
@@ -8,7 +8,7 @@ WHERE EMPLOYEE.ID = ASSINGED_TO.EMPLOYEE AND
 CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex';
 
 
-/* Paychecks need to be cut for salaried EMPLOYEEs for the month.  List NAMEs, ID's, AND check amounts for salaried EMPLOYEEs. */  
+/* 2. Paychecks need to be cut for salaried EMPLOYEEs for the month.  List NAMEs, ID's, AND check amounts for salaried EMPLOYEEs. */  
 
 SELECT ID, NAME,  (PAY_RATE / 12)
 FROM EMPLOYEE
@@ -16,7 +16,7 @@ WHERE PAY_CLASS = 'YR'
 ORDER BY 3;
 
 
-/* What is the NAME of our latest hire? */
+/* 3. What is the NAME of our latest hire? */
 
 SELECT EMPLOYEE.NAME
 FROM EMPLOYEE
@@ -25,7 +25,7 @@ WHERE EMPLOYEE.HIRE_DATE =
 FROM EMPLOYEE);
 
 
-/* Display the Cost AND COMPONENTs needed for a ENTRDMS SERVICE. */
+/* 4. Display the Cost AND COMPONENTs needed for a ENTRDMS SERVICE. */
 
 SELECT COMPONENT.ID, COMPONENT.TYPE, COMPONENT.COST
 FROM COMPONENT, MADE_OF, HARDWARE, SERVICE
@@ -35,28 +35,28 @@ SERVICE.HARDWARE = HARDWARE.ID AND
 SERVICE.CODE = 'ENTRDMS';
 
 
-/* A snow storm is about to Hit Denver, we need to call all of our Denver EMPLOYEEs.  What are thier NAMEs AND phone numbers? */
+/* 5. A snow storm is about to Hit Denver, we need to call all of our Denver EMPLOYEEs.  What are thier NAMEs AND phone numbers? */
 
 SELECT EMPLOYEE.NAME, EMPLOYEE.PHONE
 FROM EMPLOYEE
 WHERE EMPLOYEE.ADDRESS LIKE '%Denver%';
 
 
-/* What are the total earnings for employee D Isiah T. Billings-Clyde? */
+/* 6. What are the total earnings for employee D Isiah T. Billings-Clyde? */
 
 SELECT EMPLOYEE.PAY_RATE * 
 (SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.EMPLOYEE = (SELECT EMPLOYEE.ID FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde')) 
 FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
 
 
-/* How much has employee D Isiah T. Billings-Clyde earn for project 00308? */
+/* 7. How much has employee D Isiah T. Billings-Clyde earn for project 00308? */
 
 SELECT EMPLOYEE.PAY_RATE * 
 (SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT = 00308 AND TIMESHEET.EMPLOYEE = (SELECT EMPLOYEE.ID FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde')) 
 FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
 
 
-/* How much has employee D Isiah T. Billings-Clyde earned working for Hotel Coral Essex? */
+/* 8. How much has employee D Isiah T. Billings-Clyde earned working for Hotel Coral Essex? */
 
 SELECT EMPLOYEE.PAY_RATE * 
 (SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
@@ -64,13 +64,13 @@ SELECT EMPLOYEE.PAY_RATE *
 AND TIMESHEET.EMPLOYEE = (SELECT EMPLOYEE.ID FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde')) 
 FROM EMPLOYEE WHERE EMPLOYEE.NAME = 'D Isiah T. Billings-Clyde';
 
-/* How many hours were worked for all the projects with the business name Hotel Coral Essex? */
+/* 9. How many hours were worked for all the projects with the business name Hotel Coral Essex? */
 
 SELECT SUM(HOURS_WORKED) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
 (SELECT PROJECT.ID FROM PROJECT WHERE PROJECT.CUSTOMER = (SELECT CUSTOMER.ID FROM CUSTOMER WHERE CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex'));
 
 
-/* How much money has been paid out to employees who have worked for the customer Hotel Coral Essex? */
+/* 10. How much money has been paid out to employees who have worked for the customer Hotel Coral Essex? */
 
 SELECT SUM(HOURS_WORKED * (SELECT EMP.PAY_RATE FROM EMPLOYEE AS EMP WHERE EMP.ID = EMPLOYEE)) FROM TIMESHEET WHERE TIMESHEET.PROJECT IN 
 (SELECT PROJECT.ID FROM PROJECT WHERE PROJECT.CUSTOMER = (SELECT CUSTOMER.ID FROM CUSTOMER WHERE CUSTOMER.BUSINESS_NAME = 'Hotel Coral Essex'));
